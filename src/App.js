@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { RecoilRoot } from 'recoil';
-import { DailyProvider, useDailyEvent, useVideoTrack, useParticipantIds } from '@daily-co/daily-react';
+import { DailyProvider } from '@daily-co/daily-react';
 import VideoCall from './VideoCall';
 
 const App = () => {
