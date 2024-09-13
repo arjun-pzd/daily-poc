@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef } from 'react';
+import { RecoilRoot } from 'recoil';
+import { DailyProvider, useDailyEvent, useVideoTrack, useParticipantIds } from '@daily-co/daily-react';
+import VideoCall from './VideoCall';
 
-function App() {
+const App = () => {
+  const roomUrl = 'https://perfecttest.daily.co/QNYYVO9rVzGjNPHgUXNc'; // Replace with your actual Daily.co room URL
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecoilRoot>
+      <DailyProvider url={roomUrl}>
+          <VideoCall />
+      </DailyProvider>
+    </RecoilRoot>
   );
-}
+};
 
 export default App;
